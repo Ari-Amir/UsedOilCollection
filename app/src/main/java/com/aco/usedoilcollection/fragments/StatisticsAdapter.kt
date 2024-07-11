@@ -33,7 +33,7 @@ class StatisticsAdapter : ListAdapter<Triple<OilCollectionRecord, String, String
             recordIdTextView.text = "ID: ${record.id}"
             recordDateTimeTextView.text = formatDateTime(record.dateTime)
             recordUserTextView.text = userName
-            recordLocationTextView.text = locationName
+            recordLocationTextView.text = record.locationName
             recordLitersTextView.text = "${record.litersCollected} Ltrs"
         }
 

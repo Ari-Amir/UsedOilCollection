@@ -30,3 +30,4 @@ class OilCollectionRepository(private val oilCollectionRecordDao: OilCollectionR
         return oilCollectionRecordDao.getLocationNameById(locationId)
     }
 }
+

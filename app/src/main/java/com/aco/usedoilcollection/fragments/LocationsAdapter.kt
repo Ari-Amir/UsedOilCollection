@@ -1,10 +1,13 @@
 package com.aco.usedoilcollection.fragments
 
+import android.app.AlertDialog
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.ImageButton
+import android.widget.PopupMenu
+import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -27,21 +30,73 @@ class LocationsAdapter(
     }
 
     class LocationViewHolder(itemView: View, private val viewModel: LocationViewModel) : RecyclerView.ViewHolder(itemView) {
-        private val locationNameEditText: EditText = itemView.findViewById(R.id.location_name)
-        private val editButton: ImageButton = itemView.findViewById(R.id.edit_button)
-        private val deleteButton: ImageButton = itemView.findViewById(R.id.delete_button)
+        private val locationNameTextView: TextView = itemView.findViewById(R.id.location_name)
+        private val locationNameEditText: EditText = itemView.findViewById(R.id.location_name_edit)
+        private val menuButton: ImageButton = itemView.findViewById(R.id.menu_button)
+        private val saveButton: ImageButton = itemView.findViewById(R.id.save_button)
 
         fun bind(location: Location) {
+            locationNameTextView.text = location.name
             locationNameEditText.setText(location.name)
-            editButton.setOnClickListener {
+
+            menuButton.setOnClickListener {
+                showPopupMenu(it, location)
+            }
+
+            saveButton.setOnClickListener {
                 val newName = locationNameEditText.text.toString()
                 if (newName.isNotBlank()) {
                     viewModel.updateLocation(location.copy(name = newName))
+                    locationNameTextView.text = newName
+                    switchToViewMode()
                 }
             }
-            deleteButton.setOnClickListener {
-                viewModel.deleteLocation(location)
+
+            switchToViewMode()
+        }
+
+        private fun switchToEditMode() {
+            locationNameTextView.visibility = View.GONE
+            locationNameEditText.visibility = View.VISIBLE
+            saveButton.visibility = View.VISIBLE
+            menuButton.visibility = View.GONE
+        }
+
+        private fun switchToViewMode() {
+            locationNameTextView.visibility = View.VISIBLE
+            locationNameEditText.visibility = View.GONE
+            saveButton.visibility = View.GONE
+            menuButton.visibility = View.VISIBLE
+        }
+
+        private fun showPopupMenu(view: View, location: Location) {
+            val popupMenu = PopupMenu(view.context, view)
+            popupMenu.menuInflater.inflate(R.menu.menu_location, popupMenu.menu)
+            popupMenu.setOnMenuItemClickListener { menuItem ->
+                when (menuItem.itemId) {
+                    R.id.action_edit -> {
+                        switchToEditMode()
+                        true
+                    }
+                    R.id.action_delete -> {
+                        showDeleteConfirmationDialog(view, location)
+                        true
+                    }
+                    else -> false
+                }
             }
+            popupMenu.show()
+        }
+
+        private fun showDeleteConfirmationDialog(view: View, location: Location) {
+            AlertDialog.Builder(view.context)
+                .setTitle("Delete Location")
+                .setMessage("Are you sure you want to delete this location?")
+                .setPositiveButton("Yes") { _, _ ->
+                    viewModel.deleteLocation(location)
+                }
+                .setNegativeButton("No", null)
+                .show()
         }
     }
 

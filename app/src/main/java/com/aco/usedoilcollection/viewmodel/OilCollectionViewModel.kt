@@ -45,7 +45,7 @@ open class OilCollectionViewModel(private val repository: OilCollectionRepositor
         viewModelScope.launch {
             repository.getAllRecords().collect { records ->
                 val recordsWithDetails = records.map { record ->
-                    val userName = repository.getUserNameById(record.userId) ?: "Unknown User"
+                    val userName = repository.getUserNameById(record.userId) ?: "Unknown"
                     val locationName = repository.getLocationNameById(record.locationId) ?: "Location ${record.locationId}"
                     Triple(record, userName, locationName)
                 }
@@ -56,21 +56,17 @@ open class OilCollectionViewModel(private val repository: OilCollectionRepositor
 
 
     fun addRecord(dateTime: Long, litersCollected: Int, userId: Int, locationId: Int) {
-        val newRecord = OilCollectionRecord(
-            dateTime = dateTime,
-            litersCollected = litersCollected,
-            userId = userId,
-            locationId = locationId
-        )
-
         viewModelScope.launch {
-            try {
-                Log.d("OilCollectionViewModel", "Inserting record: $newRecord")
-                repository.insertRecord(newRecord)
-                loadRecordsForToday()
-            } catch (e: Exception) {
-                Log.e("OilCollectionViewModel", "Error inserting record", e)
-            }
+            val locationName = repository.getLocationNameById(locationId) ?: "Unknown"
+            val newRecord = OilCollectionRecord(
+                dateTime = dateTime,
+                litersCollected = litersCollected,
+                userId = userId,
+                locationId = locationId,
+                locationName = locationName
+            )
+            repository.insertRecord(newRecord)
+            loadRecordsForToday()
         }
     }
 

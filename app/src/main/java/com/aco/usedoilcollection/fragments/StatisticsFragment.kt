@@ -35,7 +35,7 @@ class StatisticsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val repository = (requireActivity() as MainActivity).oilCollectionRepository
-        oilCollectionViewModel = ViewModelProvider(this, OilCollectionViewModelFactory(repository)).get(OilCollectionViewModel::class.java)
+        oilCollectionViewModel = ViewModelProvider(this, OilCollectionViewModelFactory(repository))[OilCollectionViewModel::class.java]
 
         statisticsAdapter = StatisticsAdapter()
         statisticsRecyclerView.adapter = statisticsAdapter
