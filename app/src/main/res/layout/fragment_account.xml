@@ -1,42 +1,42 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.AccountFragment">
+    xmlns:app="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_marginTop="180dp">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/user_info_card"
-        android:layout_width="0dp"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="15dp"
-        app:cardElevation="12dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        card_view:cardCornerRadius="15dp"
+        card_view:cardElevation="12dp"
+        card_view:cardBackgroundColor="#2C2C2E"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginHorizontal="25dp"
-        android:layout_marginTop="150dp"
-        android:backgroundTint="@color/card_background">
+        app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="16dp">
 
             <TextView
-                android:id="@+id/user_info_title"
+                android:id="@+id/user_information_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:text="User Information"
                 android:textSize="24sp"
-                android:textColor="@color/text_color"
-                android:fontFamily="@font/poppins_regular"
-                android:layout_gravity="center_horizontal" />
+                android:textStyle="bold"
+                android:textColor="@android:color/white" />
 
-            <View
+            <Space
                 android:layout_width="match_parent"
                 android:layout_height="20dp" />
 
@@ -46,19 +46,19 @@
                 android:layout_height="wrap_content"
                 android:text="Username"
                 android:textSize="15sp"
-                android:textColor="@color/text_color"
-                android:alpha="0.7"
-                android:fontFamily="@font/poppins_regular" />
+                android:textStyle="bold"
+                android:textColor="#B3B3B3" />
 
             <TextView
-                android:id="@+id/username_value"
+                android:id="@+id/username"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="User1"
                 android:textSize="18sp"
-                android:textColor="@color/text_color"
-                android:fontFamily="@font/poppins_regular" />
+                android:textStyle="bold"
+                android:textColor="@android:color/white" />
 
-            <View
+            <Space
                 android:layout_width="match_parent"
                 android:layout_height="24dp" />
 
@@ -68,19 +68,19 @@
                 android:layout_height="wrap_content"
                 android:text="Email"
                 android:textSize="15sp"
-                android:textColor="@color/text_color"
-                android:alpha="0.7"
-                android:fontFamily="@font/poppins_regular" />
+                android:textStyle="bold"
+                android:textColor="#B3B3B3" />
 
             <TextView
-                android:id="@+id/email_value"
+                android:id="@+id/email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="user1@gmail.com"
                 android:textSize="18sp"
-                android:textColor="@color/text_color"
-                android:fontFamily="@font/poppins_regular" />
+                android:textStyle="bold"
+                android:textColor="@android:color/white" />
 
-            <View
+            <Space
                 android:layout_width="match_parent"
                 android:layout_height="24dp" />
 
@@ -90,9 +90,12 @@
                 android:layout_height="wrap_content"
                 android:text="Log Out"
                 android:textSize="20sp"
-                android:textColor="@color/button_text_color"
-                android:backgroundTint="@color/button_color"
-                android:fontFamily="@font/poppins_regular" />
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:backgroundTint="#8A56AC" />
+
         </LinearLayout>
+
     </androidx.cardview.widget.CardView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

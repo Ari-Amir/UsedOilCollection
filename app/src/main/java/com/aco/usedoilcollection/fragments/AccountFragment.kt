@@ -28,8 +28,8 @@ class AccountFragment : Fragment() {
 
         authViewModel = ViewModelProvider(requireActivity()).get(AuthViewModel::class.java)
 
-        val usernameTextView = view.findViewById<TextView>(R.id.username_value)
-        val emailTextView = view.findViewById<TextView>(R.id.email_value)
+        val usernameTextView = view.findViewById<TextView>(R.id.username)
+        val emailTextView = view.findViewById<TextView>(R.id.email)
         val logoutButton = view.findViewById<Button>(R.id.logout_button)
 
         val user = authViewModel.getCurrentUser()

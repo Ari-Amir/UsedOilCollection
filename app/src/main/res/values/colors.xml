@@ -6,4 +6,14 @@
     <color name="card_background">#FFFFFF</color> <!-- Card background color -->
     <color name="button_color">#00A86B</color> <!-- Example button color -->
     <color name="button_text_color">#FFFFFF</color> <!-- Example button text color -->
+
+    <color name="black">#000000</color>
+    <color name="dark_gray">#333333</color>
+    <color name="light_gray">#AAAAAA</color>
+    <color name="white">#FFFFFF</color>
+    <color name="purple">#BB86FC</color>
+
+    <color name="purple_500">#BB86FC</color>
+    <color name="purple_700">#3700B3</color>
+    <color name="teal_200">#03DAC6</color>
 </resources>
