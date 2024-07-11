@@ -9,7 +9,7 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface OilCollectionRecordDao {
     @Insert
-    suspend fun insert(record: OilCollectionRecord)
+    suspend fun insert(record: OilCollectionRecord): Long
 
     @Query("SELECT * FROM oil_collection_records ORDER BY dateTime DESC")
     fun getAllRecords(): Flow<List<OilCollectionRecord>>

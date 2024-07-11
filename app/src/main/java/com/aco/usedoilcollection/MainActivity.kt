@@ -1,6 +1,7 @@
 package com.aco.usedoilcollection
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
@@ -27,7 +28,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var oilCollectionViewModel: OilCollectionViewModel
     private lateinit var locationViewModel: LocationViewModel
     private var isUserLoggedIn: Boolean = false
-    private var currentUserId: Int? = null
+    var currentUserId: Int? = null
     private var currentUserEmail: String? = null
     lateinit var locationRepository: LocationRepository
     lateinit var oilCollectionRepository: OilCollectionRepository
@@ -112,6 +113,7 @@ class MainActivity : AppCompatActivity() {
                     if (isLoginMode) {
                         authViewModel.login(email, password, onSuccess = {
                             currentUserId = authViewModel.getCurrentUser()?.id
+                            Log.d("MainActivity", "Logged in user ID: $currentUserId")
                             currentUserId?.let { oilCollectionViewModel.setCurrentUser(it) }
                             showViewPagerScreen()
                         }) { error ->
@@ -121,6 +123,7 @@ class MainActivity : AppCompatActivity() {
                     } else {
                         authViewModel.register(email, password, name, onSuccess = {
                             currentUserId = authViewModel.getCurrentUser()?.id
+                            Log.d("MainActivity", "Registered user ID: $currentUserId")
                             currentUserId?.let { oilCollectionViewModel.setCurrentUser(it) }
                             showViewPagerScreen()
                         }) { error ->

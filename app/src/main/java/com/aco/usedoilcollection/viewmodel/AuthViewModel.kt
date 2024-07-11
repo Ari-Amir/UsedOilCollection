@@ -20,13 +20,17 @@ class AuthViewModel(private val userRepository: UserRepository) : ViewModel() {
             } else {
                 val hashedPassword = hashPassword(password)
                 val newUser = User(email = email, passwordHash = hashedPassword, name = name, isLoggedIn = true)
-                userRepository.insert(newUser)
-                currentUser = newUser
-                Log.d("AuthViewModel", "Registered user: ${newUser.email}, userId: ${newUser.id}")
-                onSuccess()
+                val userId = userRepository.insert(newUser)  // Получаем ID вставленного пользователя
+                if (userId > 0) {
+                    currentUser = newUser.copy(id = userId.toInt())  // Устанавливаем ID пользователю
+                    onSuccess()
+                } else {
+                    onError("Error registering user")
+                }
             }
         }
     }
+
 
     fun login(email: String, password: String, onSuccess: () -> Unit, onError: (String) -> Unit) {
         viewModelScope.launch {

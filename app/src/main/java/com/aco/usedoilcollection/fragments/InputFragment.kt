@@ -1,6 +1,7 @@
 package com.aco.usedoilcollection.fragments
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.View
@@ -17,6 +18,7 @@ import androidx.lifecycle.lifecycleScope
 import com.aco.usedoilcollection.MainActivity
 import com.aco.usedoilcollection.R
 import com.aco.usedoilcollection.utils.getCurrentDate
+import com.aco.usedoilcollection.utils.getCurrentDateTime
 import com.aco.usedoilcollection.viewmodel.LocationViewModel
 import com.aco.usedoilcollection.viewmodel.LocationViewModelFactory
 import com.aco.usedoilcollection.viewmodel.OilCollectionViewModel
@@ -34,6 +36,8 @@ class InputFragment : Fragment() {
     private lateinit var addButton: Button
     private var selectedLocationId: Int = -1
     private var selectedLocation: String = "Select location"
+    private var currentUserId: Int? = null
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -54,6 +58,7 @@ class InputFragment : Fragment() {
         val repository = (requireActivity() as MainActivity).locationRepository
         locationViewModel = ViewModelProvider(this, LocationViewModelFactory(repository)).get(LocationViewModel::class.java)
         oilCollectionViewModel = ViewModelProvider(requireActivity()).get(OilCollectionViewModel::class.java)
+        currentUserId = (requireActivity() as MainActivity).currentUserId
 
         currentDateTextView.text = getCurrentDate()
         viewLifecycleOwner.lifecycleScope.launch {
@@ -114,9 +119,17 @@ class InputFragment : Fragment() {
             .setMessage("Are you sure you want to add $enteredLiters liters to $selectedLocation?")
             .setPositiveButton("Yes") { _, _ ->
                 if (enteredLiters <= remainingVolume) {
-                    val currentDateTime = System.currentTimeMillis()
-                    oilCollectionViewModel.addRecord(currentDateTime, enteredLiters, selectedLocationId)
+                    // Проверка currentUserId перед добавлением записи
+                    if (currentUserId != null && currentUserId != 0 && selectedLocationId != -1) {
+                        Log.d("InputFragment", "Adding record: userId=${currentUserId}, liters=$enteredLiters, locationId=$selectedLocationId")
+                        oilCollectionViewModel.addRecord(getCurrentDateTime(), enteredLiters, currentUserId!!, selectedLocationId)
+                    } else {
+                        Toast.makeText(requireContext(), "Invalid user ID or location ID", Toast.LENGTH_SHORT).show()
+                        Log.d("InputFragment", "Invalid user ID or location ID: userId=${currentUserId}, locationId=$selectedLocationId")
+                    }
                     Toast.makeText(requireContext(), "Added $enteredLiters liters to $selectedLocation.", Toast.LENGTH_SHORT).show()
+                    remainingVolume -= enteredLiters
+                    remainingVolumeTextView.text = "Remaining Volume: ${remainingVolume}L"
                     litersInput.setText("")
                     selectedLocation = "Select location"
                     selectedLocationId = -1
@@ -128,4 +141,5 @@ class InputFragment : Fragment() {
             .setNegativeButton("No", null)
             .show()
     }
+
 }

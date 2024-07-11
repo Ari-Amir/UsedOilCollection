@@ -1,5 +1,6 @@
 package com.aco.usedoilcollection.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.aco.usedoilcollection.database.entities.OilCollectionRecord
@@ -44,8 +45,8 @@ open class OilCollectionViewModel(private val repository: OilCollectionRepositor
         viewModelScope.launch {
             repository.getAllRecords().collect { records ->
                 val recordsWithDetails = records.map { record ->
-                    val userName = repository.getUserNameById(record.userId) ?: "Unknown"
-                    val locationName = repository.getLocationNameById(record.locationId) ?: "Unknown"
+                    val userName = repository.getUserNameById(record.userId) ?: "Unknown User"
+                    val locationName = repository.getLocationNameById(record.locationId) ?: "Location ${record.locationId}"
                     Triple(record, userName, locationName)
                 }
                 _collectionHistory.value = recordsWithDetails
@@ -53,8 +54,8 @@ open class OilCollectionViewModel(private val repository: OilCollectionRepositor
         }
     }
 
-    fun addRecord(dateTime: Long, litersCollected: Int, locationId: Int) {
-        val userId = currentUserId ?: return
+
+    fun addRecord(dateTime: Long, litersCollected: Int, userId: Int, locationId: Int) {
         val newRecord = OilCollectionRecord(
             dateTime = dateTime,
             litersCollected = litersCollected,
@@ -63,10 +64,17 @@ open class OilCollectionViewModel(private val repository: OilCollectionRepositor
         )
 
         viewModelScope.launch {
-            repository.insertRecord(newRecord)
-            loadRecordsForToday()
+            try {
+                Log.d("OilCollectionViewModel", "Inserting record: $newRecord")
+                repository.insertRecord(newRecord)
+                loadRecordsForToday()
+            } catch (e: Exception) {
+                Log.e("OilCollectionViewModel", "Error inserting record", e)
+            }
         }
     }
+
+
 
     private fun getStartOfDay(): Long {
         val calendar = Calendar.getInstance()
