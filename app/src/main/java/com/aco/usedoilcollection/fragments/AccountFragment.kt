@@ -26,7 +26,7 @@ class AccountFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        authViewModel = ViewModelProvider(requireActivity()).get(AuthViewModel::class.java)
+        authViewModel = ViewModelProvider(requireActivity())[AuthViewModel::class.java]
 
         val usernameTextView = view.findViewById<TextView>(R.id.username)
         val emailTextView = view.findViewById<TextView>(R.id.email)

@@ -1,11 +1,8 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:drawable="@color/primary_color"/>
+    <item android:drawable="@color/md_theme_dark_primary"/>
     <item>
         <bitmap
-            android:tileModeX="mirror"
             android:src="@drawable/oil_collection_logo"
-
-
-            />
+            android:tileModeX="mirror" />
     </item>
 </layer-list>

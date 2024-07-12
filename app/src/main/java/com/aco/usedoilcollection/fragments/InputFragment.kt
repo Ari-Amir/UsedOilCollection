@@ -28,7 +28,7 @@ class InputFragment : Fragment() {
 
     private lateinit var locationViewModel: LocationViewModel
     private lateinit var oilCollectionViewModel: OilCollectionViewModel
-    private var remainingVolume: Int = 1800 // Установите здесь начальное значение
+    private var remainingVolume: Int = 1800
     private lateinit var currentDateTextView: TextView
     private lateinit var remainingVolumeTextView: TextView
     private lateinit var litersInput: EditText
@@ -119,7 +119,6 @@ class InputFragment : Fragment() {
             .setMessage("Are you sure you want to add $enteredLiters liters to $selectedLocation?")
             .setPositiveButton("Yes") { _, _ ->
                 if (enteredLiters <= remainingVolume) {
-                    // Проверка currentUserId перед добавлением записи
                     if (currentUserId != null && currentUserId != 0 && selectedLocationId != -1) {
                         Log.d("InputFragment", "Adding record: userId=${currentUserId}, liters=$enteredLiters, locationId=$selectedLocationId")
                         oilCollectionViewModel.addRecord(getCurrentDateTime(), enteredLiters, currentUserId!!, selectedLocationId)

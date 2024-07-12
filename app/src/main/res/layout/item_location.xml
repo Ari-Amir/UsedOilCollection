@@ -5,8 +5,7 @@
     android:layout_height="wrap_content"
     android:layout_margin="4dp"
     card_view:cardCornerRadius="12dp"
-    card_view:cardElevation="4dp"
-    card_view:cardBackgroundColor="#1C1C1E">
+    card_view:cardElevation="4dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -18,7 +17,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Test Location"
-            android:textColor="#FFFFFF"
             android:textSize="18sp" />
 
         <EditText
@@ -29,7 +27,6 @@
             android:layout_weight="1"
             android:background="@android:color/transparent"
             android:fontFamily="sans-serif-medium"
-            android:textColor="@android:color/white"
             android:textSize="18sp"
             android:visibility="gone"
             android:padding="0dp"

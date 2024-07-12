@@ -1,8 +1,8 @@
 package com.aco.usedoilcollection
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
@@ -35,6 +35,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        enableEdgeToEdge()
+
         setContentView(R.layout.activity_main)
 
         database = Room.databaseBuilder(
@@ -113,7 +116,6 @@ class MainActivity : AppCompatActivity() {
                     if (isLoginMode) {
                         authViewModel.login(email, password, onSuccess = {
                             currentUserId = authViewModel.getCurrentUser()?.id
-                            Log.d("MainActivity", "Logged in user ID: $currentUserId")
                             currentUserId?.let { oilCollectionViewModel.setCurrentUser(it) }
                             showViewPagerScreen()
                         }) { error ->
@@ -123,7 +125,6 @@ class MainActivity : AppCompatActivity() {
                     } else {
                         authViewModel.register(email, password, name, onSuccess = {
                             currentUserId = authViewModel.getCurrentUser()?.id
-                            Log.d("MainActivity", "Registered user ID: $currentUserId")
                             currentUserId?.let { oilCollectionViewModel.setCurrentUser(it) }
                             showViewPagerScreen()
                         }) { error ->

@@ -41,7 +41,7 @@ class LocationsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val repository = (requireActivity() as MainActivity).locationRepository
-        locationViewModel = ViewModelProvider(this, LocationViewModelFactory(repository)).get(LocationViewModel::class.java)
+        locationViewModel = ViewModelProvider(this, LocationViewModelFactory(repository))[LocationViewModel::class.java]
 
         locationsAdapter = LocationsAdapter(locationViewModel)
         locationsRecyclerView.adapter = locationsAdapter

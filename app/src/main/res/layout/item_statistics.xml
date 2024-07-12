@@ -5,8 +5,7 @@
     android:layout_height="wrap_content"
     android:layout_margin="4dp"
     card_view:cardCornerRadius="12dp"
-    card_view:cardElevation="4dp"
-    card_view:cardBackgroundColor="#2C2C2E">
+    card_view:cardElevation="4dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -33,7 +32,6 @@
                 android:layout_height="wrap_content"
                 android:text="DateTime"
                 android:textAppearance="?attr/textAppearanceBody1"
-                android:textColor="@android:color/white"
                 android:layout_weight="1"
                 android:layout_marginStart="8dp" />
 
@@ -42,8 +40,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="User"
-                android:textAppearance="?attr/textAppearanceBody1"
-                android:textColor="@android:color/white" />
+                android:textAppearance="?attr/textAppearanceBody1" />
         </LinearLayout>
 
         <LinearLayout
@@ -57,9 +54,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="Location"
-                android:paddingStart="38dp"
+                android:paddingStart="48dp"
                 android:textAppearance="?attr/textAppearanceBody1"
-                android:textColor="@android:color/white"
                 android:layout_weight="1" />
 
             <TextView
@@ -67,8 +63,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Liters"
-                android:textAppearance="?attr/textAppearanceBody1"
-                android:textColor="@android:color/white" />
+                android:textAppearance="?attr/textAppearanceBody1" />
         </LinearLayout>
 
     </LinearLayout>

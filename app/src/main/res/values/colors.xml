@@ -1,19 +1,34 @@
 <resources>
-    <color name="background_color">#F8F8F8</color>
-    <color name="primary_color">#000000</color>
-    <color name="secondary_color">#FFC107</color> <!-- Example secondary color -->
-    <color name="text_color">#333333</color>
-    <color name="card_background">#FFFFFF</color> <!-- Card background color -->
-    <color name="button_color">#00A86B</color> <!-- Example button color -->
-    <color name="button_text_color">#FFFFFF</color> <!-- Example button text color -->
+    <!-- Light theme colors -->
+    <color name="md_theme_light_primary">#6200EE</color>
+    <color name="md_theme_light_primary_variant">#3700B3</color>
+    <color name="md_theme_light_on_primary">#FFFFFF</color>
+    <color name="md_theme_light_secondary">#03DAC6</color>
+    <color name="md_theme_light_secondary_variant">#018786</color>
+    <color name="md_theme_light_on_secondary">#000000</color>
+    <color name="md_theme_light_background">#FFFFFF</color>
+    <color name="md_theme_light_on_background">#000000</color>
+    <color name="md_theme_light_surface">#FFFFFF</color>
+    <color name="md_theme_light_on_surface">#000000</color>
+    <color name="md_theme_light_error">#B00020</color>
+    <color name="md_theme_light_on_error">#FFFFFF</color>
 
-    <color name="black">#000000</color>
-    <color name="dark_gray">#333333</color>
-    <color name="light_gray">#AAAAAA</color>
-    <color name="white">#FFFFFF</color>
-    <color name="purple">#BB86FC</color>
+    <!-- Dark theme colors -->
+    <color name="md_theme_dark_primary">#BB86FC</color>
+    <color name="md_theme_dark_primary_variant">#3700B3</color>
+    <color name="md_theme_dark_on_primary">#000000</color>
+    <color name="md_theme_dark_secondary">#03DAC6</color>
+    <color name="md_theme_dark_secondary_variant">#03DAC6</color>
+    <color name="md_theme_dark_on_secondary">#000000</color>
+    <color name="md_theme_dark_background">#121212</color>
+    <color name="md_theme_dark_on_background">#FFFFFF</color>
+    <color name="md_theme_dark_surface">#121212</color>
+    <color name="md_theme_dark_on_surface">#FFFFFF</color>
+    <color name="md_theme_dark_error">#CF6679</color>
+    <color name="md_theme_dark_on_error">#000000</color>
 
-    <color name="purple_500">#BB86FC</color>
-    <color name="purple_700">#3700B3</color>
-    <color name="teal_200">#03DAC6</color>
+    <!-- Compose theme colors -->
+    <color name="purple_40">#6650a4</color>
+    <color name="purple_grey_40">#625b71</color>
+    <color name="pink_40">#7D5260</color>
 </resources>

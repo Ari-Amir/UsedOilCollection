@@ -1,6 +1,5 @@
 package com.aco.usedoilcollection.viewmodel
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.aco.usedoilcollection.database.entities.User
@@ -20,9 +19,9 @@ class AuthViewModel(private val userRepository: UserRepository) : ViewModel() {
             } else {
                 val hashedPassword = hashPassword(password)
                 val newUser = User(email = email, passwordHash = hashedPassword, name = name, isLoggedIn = true)
-                val userId = userRepository.insert(newUser)  // Получаем ID вставленного пользователя
+                val userId = userRepository.insert(newUser)
                 if (userId > 0) {
-                    currentUser = newUser.copy(id = userId.toInt())  // Устанавливаем ID пользователю
+                    currentUser = newUser.copy(id = userId.toInt())
                     onSuccess()
                 } else {
                     onError("Error registering user")
@@ -42,7 +41,6 @@ class AuthViewModel(private val userRepository: UserRepository) : ViewModel() {
             } else {
                 userRepository.setLoginStatus(user.id, true)
                 currentUser = user
-                Log.d("AuthViewModel", "Logged in as: ${user.email}, userId: ${user.id}")
                 onSuccess()
             }
         }
@@ -52,7 +50,6 @@ class AuthViewModel(private val userRepository: UserRepository) : ViewModel() {
         viewModelScope.launch {
             userRepository.setLoginStatus(userId, false)
             currentUser = null
-            Log.d("AuthViewModel", "Logged out userId: $userId")
         }
     }
 
