@@ -17,4 +17,10 @@ interface LocationDao {
 
     @Query("SELECT * FROM locations ORDER BY name ASC")
     fun getAllLocations(): Flow<List<Location>>
+
+    @Query("DELETE FROM locations")
+    suspend fun deleteAllLocations()
+
+    @Query("DELETE FROM sqlite_sequence WHERE name = 'locations'")
+    suspend fun resetAutoIncrementLocations()
 }

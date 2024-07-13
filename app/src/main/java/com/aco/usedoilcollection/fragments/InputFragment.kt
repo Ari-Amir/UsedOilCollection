@@ -74,8 +74,9 @@ class InputFragment : Fragment() {
 
         viewLifecycleOwner.lifecycleScope.launch {
             locationViewModel.locations.collect { locations ->
+                val sortedLocations = locations.sortedBy { it.name.extractInt() }
                 val popupMenu = PopupMenu(requireContext(), locationSelector)
-                locations.forEach { location ->
+                sortedLocations.forEach { location ->
                     popupMenu.menu.add(Menu.NONE, location.id, Menu.NONE, location.name)
                 }
                 popupMenu.setOnMenuItemClickListener { menuItem ->
@@ -141,4 +142,7 @@ class InputFragment : Fragment() {
             .show()
     }
 
+    private fun String.extractInt(): Int {
+        return this.filter { it.isDigit() }.toIntOrNull() ?: Int.MAX_VALUE
+    }
 }

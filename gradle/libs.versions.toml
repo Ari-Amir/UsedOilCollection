@@ -22,6 +22,7 @@ truth = "1.1.3"
 hamcrest = "1.3"
 junit = "4.13.2"
 junitVersion = "1.2.1"
+uiautomator = "2.3.0"
 
 
 
@@ -53,6 +54,7 @@ espresso-idling-resource = { group = "androidx.test.espresso", name = "espresso-
 espresso-web = { group = "androidx.test.espresso", name = "espresso-web", version.ref = "espressoWeb" }
 androidx-truth = { group = "com.google.truth", name = "truth", version.ref = "truth" }
 hamcrest-library = { group = "org.hamcrest", name = "hamcrest-library", version.ref = "hamcrest" }
+androidx-uiautomator = { group = "androidx.test.uiautomator", name = "uiautomator", version.ref = "uiautomator" }
 
 
 [plugins]

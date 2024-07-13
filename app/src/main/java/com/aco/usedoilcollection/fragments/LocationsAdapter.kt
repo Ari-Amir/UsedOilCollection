@@ -29,6 +29,12 @@ class LocationsAdapter(
         holder.bind(location)
     }
 
+    override fun submitList(list: List<Location>?) {
+        super.submitList(list?.sortedWith(compareBy {
+            it.name.substringAfter("Location ").toIntOrNull() ?: 0
+        }))
+    }
+
     class LocationViewHolder(itemView: View, private val viewModel: LocationViewModel) : RecyclerView.ViewHolder(itemView) {
         private val locationNameTextView: TextView = itemView.findViewById(R.id.location_name)
         private val locationNameEditText: EditText = itemView.findViewById(R.id.location_name_edit)

@@ -22,5 +22,8 @@ interface UserDao {
 
     @Query("DELETE FROM users")
     suspend fun deleteAllUsers()
+
+    @Query("DELETE FROM sqlite_sequence WHERE name = 'users'")
+    suspend fun resetAutoIncrementUsers()
 }
 

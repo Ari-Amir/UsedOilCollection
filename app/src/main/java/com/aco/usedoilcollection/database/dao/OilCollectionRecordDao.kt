@@ -23,4 +23,10 @@ interface OilCollectionRecordDao {
 
     @Query("SELECT name FROM locations WHERE id = :locationId")
     suspend fun getLocationNameById(locationId: Int): String?
+
+    @Query("DELETE FROM oil_collection_records")
+    suspend fun deleteAllRecords()
+
+    @Query("DELETE FROM sqlite_sequence WHERE name = 'oil_collection_records'")
+    suspend fun resetAutoIncrementRecords()
 }
