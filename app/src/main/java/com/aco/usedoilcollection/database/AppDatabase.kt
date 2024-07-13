@@ -1,5 +1,4 @@
 package com.aco.usedoilcollection.database
-
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import com.aco.usedoilcollection.database.dao.LocationDao
