@@ -15,8 +15,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:tabTextColor="?attr/colorPrimary"
-        app:tabSelectedTextColor="?attr/colorPrimary"
-        app:tabBackground="@android:color/white"/>
+        app:tabSelectedTextColor="?attr/colorPrimary"/>
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/view_pager"
