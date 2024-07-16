@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity() {
 
         authViewModel = ViewModelProvider(this, AuthViewModelFactory(userRepository)).get(AuthViewModel::class.java)
         oilCollectionViewModel = ViewModelProvider(this, OilCollectionViewModelFactory(oilCollectionRepository)).get(OilCollectionViewModel::class.java)
-        locationViewModel = ViewModelProvider(this, LocationViewModelFactory(locationRepository)).get(LocationViewModel::class.java)
+        locationViewModel = ViewModelProvider(this, LocationViewModelFactory(locationRepository))[LocationViewModel::class.java]
 
         lifecycleScope.launch {
             try {
