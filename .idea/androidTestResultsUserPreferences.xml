@@ -113,6 +113,7 @@
               <option name="preferredColumnWidths">
                 <map>
                   <entry key="Duration" value="90" />
+                  <entry key="Pixel_6_API_29_Android_10" value="120" />
                   <entry key="Tests" value="360" />
                   <entry key="Xiaomi Mi 9T Pro" value="120" />
                 </map>
@@ -126,6 +127,7 @@
               <option name="preferredColumnWidths">
                 <map>
                   <entry key="Duration" value="90" />
+                  <entry key="Pixel_6_API_29_Android_10" value="120" />
                   <entry key="Tests" value="360" />
                   <entry key="Xiaomi Mi 9T Pro" value="120" />
                 </map>
@@ -139,6 +141,36 @@
               <option name="preferredColumnWidths">
                 <map>
                   <entry key="Duration" value="90" />
+                  <entry key="Pixel_6_API_29_Android_10" value="120" />
+                  <entry key="Pixel_6_API_30_Android_11" value="120" />
+                  <entry key="Tests" value="360" />
+                  <entry key="Xiaomi Mi 9T Pro" value="120" />
+                </map>
+              </option>
+            </AndroidTestResultsTableState>
+          </value>
+        </entry>
+        <entry key="422207222">
+          <value>
+            <AndroidTestResultsTableState>
+              <option name="preferredColumnWidths">
+                <map>
+                  <entry key="Duration" value="90" />
+                  <entry key="Pixel_6_API_29_Android_10" value="120" />
+                  <entry key="Pixel_6_API_30_Android_11" value="120" />
+                  <entry key="Pixel_6_API_31_Android_12" value="120" />
+                  <entry key="Pixel_6_API_33_Android_13" value="120" />
+                  <entry key="Pixel_7_API_29" value="120" />
+                  <entry key="Pixel_7_API_30" value="120" />
+                  <entry key="Pixel_7_API_31_Android_12" value="120" />
+                  <entry key="Pixel_7_API_33" value="120" />
+                  <entry key="Pixel_7_API_34" value="120" />
+                  <entry key="Pixel_8_API_29" value="120" />
+                  <entry key="Pixel_8_API_30" value="120" />
+                  <entry key="Pixel_8_API_31" value="120" />
+                  <entry key="Pixel_8_API_33" value="120" />
+                  <entry key="Pixel_8_API_34" value="120" />
+                  <entry key="Pixel_Fold_API_34" value="120" />
                   <entry key="Tests" value="360" />
                   <entry key="Xiaomi Mi 9T Pro" value="120" />
                 </map>
@@ -165,6 +197,47 @@
               <option name="preferredColumnWidths">
                 <map>
                   <entry key="Duration" value="90" />
+                  <entry key="Tests" value="360" />
+                  <entry key="Xiaomi Mi 9T Pro" value="120" />
+                </map>
+              </option>
+            </AndroidTestResultsTableState>
+          </value>
+        </entry>
+        <entry key="587636247">
+          <value>
+            <AndroidTestResultsTableState>
+              <option name="preferredColumnWidths">
+                <map>
+                  <entry key="Duration" value="90" />
+                  <entry key="Pixel_6_API_34_Android_14" value="120" />
+                  <entry key="Tests" value="360" />
+                </map>
+              </option>
+            </AndroidTestResultsTableState>
+          </value>
+        </entry>
+        <entry key="647510290">
+          <value>
+            <AndroidTestResultsTableState>
+              <option name="preferredColumnWidths">
+                <map>
+                  <entry key="Duration" value="90" />
+                  <entry key="Pixel_6_API_29_Android_10" value="120" />
+                  <entry key="Pixel_6_API_30_Android_11" value="120" />
+                  <entry key="Pixel_6_API_31_Android_12" value="120" />
+                  <entry key="Pixel_6_API_33_Android_13" value="120" />
+                  <entry key="Pixel_6_API_34_Android_14" value="120" />
+                  <entry key="Pixel_7_API_29" value="120" />
+                  <entry key="Pixel_7_API_30" value="120" />
+                  <entry key="Pixel_7_API_31_Android_12" value="120" />
+                  <entry key="Pixel_7_API_33" value="120" />
+                  <entry key="Pixel_7_API_34" value="120" />
+                  <entry key="Pixel_8_API_29" value="120" />
+                  <entry key="Pixel_8_API_30" value="120" />
+                  <entry key="Pixel_8_API_31" value="120" />
+                  <entry key="Pixel_8_API_33" value="120" />
+                  <entry key="Pixel_8_API_34" value="120" />
                   <entry key="Tests" value="360" />
                   <entry key="Xiaomi Mi 9T Pro" value="120" />
                 </map>
@@ -232,9 +305,10 @@
             <AndroidTestResultsTableState>
               <option name="preferredColumnWidths">
                 <map>
-                  <entry key="Duration" value="90" />
+                  <entry key="Duration" value="208" />
+                  <entry key="Pixel_6_API_29_Android_10" value="238" />
                   <entry key="Pixel_8_Pro_API_30" value="120" />
-                  <entry key="Tests" value="360" />
+                  <entry key="Tests" value="478" />
                   <entry key="Xiaomi Mi 9T Pro" value="120" />
                 </map>
               </option>
@@ -273,6 +347,7 @@
               <option name="preferredColumnWidths">
                 <map>
                   <entry key="Duration" value="90" />
+                  <entry key="Pixel_6_API_29_Android_10" value="120" />
                   <entry key="Tests" value="360" />
                   <entry key="Xiaomi Mi 9T Pro" value="120" />
                 </map>
@@ -288,6 +363,19 @@
                   <entry key="Duration" value="90" />
                   <entry key="Tests" value="360" />
                   <entry key="Xiaomi Mi 9T Pro" value="120" />
+                </map>
+              </option>
+            </AndroidTestResultsTableState>
+          </value>
+        </entry>
+        <entry key="1948143384">
+          <value>
+            <AndroidTestResultsTableState>
+              <option name="preferredColumnWidths">
+                <map>
+                  <entry key="Duration" value="90" />
+                  <entry key="Pixel_6_API_29_Android_10" value="120" />
+                  <entry key="Tests" value="360" />
                 </map>
               </option>
             </AndroidTestResultsTableState>

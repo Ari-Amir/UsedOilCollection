@@ -4,28 +4,38 @@
     <selectionStates>
       <SelectionState runConfigName="app">
         <option name="selectionMode" value="DROPDOWN" />
-        <DropdownSelection timestamp="2024-07-11T12:40:30.338820900Z">
+        <DropdownSelection timestamp="2024-07-16T02:47:37.445147500Z">
           <Target type="DEFAULT_BOOT">
             <handle>
-              <DeviceId pluginId="Default" identifier="serial=192.168.1.24:5555;connection=2e68d66a" />
+              <DeviceId pluginId="Default" identifier="serial=192.168.1.24:5555;connection=faa88476" />
             </handle>
           </Target>
         </DropdownSelection>
         <DialogSelection />
       </SelectionState>
-      <SelectionState runConfigName="AllTests">
+      <SelectionState runConfigName="RepeatTestsUIAutomator">
         <option name="selectionMode" value="DROPDOWN" />
+        <DropdownSelection timestamp="2024-07-21T08:13:45.130591500Z">
+          <Target type="DEFAULT_BOOT">
+            <handle>
+              <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\ASUS\.android\avd\Pixel_6_API_29_Android_10.avd" />
+            </handle>
+          </Target>
+        </DropdownSelection>
+        <DialogSelection />
       </SelectionState>
-      <SelectionState runConfigName="LoginTest">
+      <SelectionState runConfigName="RepeatTestsEspresso">
         <option name="selectionMode" value="DROPDOWN" />
+        <DropdownSelection timestamp="2024-07-23T05:31:12.107688700Z">
+          <Target type="DEFAULT_BOOT">
+            <handle>
+              <DeviceId pluginId="Default" identifier="serial=192.168.1.24:5555;connection=b7ae5f98" />
+            </handle>
+          </Target>
+        </DropdownSelection>
+        <DialogSelection />
       </SelectionState>
-      <SelectionState runConfigName="AddLocationTest">
-        <option name="selectionMode" value="DROPDOWN" />
-      </SelectionState>
-      <SelectionState runConfigName="printMessage1()">
-        <option name="selectionMode" value="DROPDOWN" />
-      </SelectionState>
-      <SelectionState runConfigName="printMessage()">
+      <SelectionState runConfigName="runTestsMultipleTimes()">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
     </selectionStates>

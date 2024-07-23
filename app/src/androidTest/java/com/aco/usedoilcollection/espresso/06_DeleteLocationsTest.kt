@@ -42,6 +42,7 @@ class DeleteLocationsTest {
                 break
             }
         }
+        sleep(500)
         onView(withId(R.id.locations_recycler_view)).check(matches(hasChildCount(0)))
     }
 }

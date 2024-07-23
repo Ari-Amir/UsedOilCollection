@@ -1,5 +1,6 @@
 package com.aco.usedoilcollection.fragments
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -30,6 +31,7 @@ class StatisticsAdapter : ListAdapter<Triple<OilCollectionRecord, String, String
         private val recordLitersTextView: TextView = itemView.findViewById(R.id.record_liters)
 
         fun bind(record: OilCollectionRecord, userName: String, locationName: String) {
+            Log.d("StatisticsViewHolder", "Binding record ID: ${record.id}, User: $userName, Location: $locationName")
             recordIdTextView.text = "ID: ${record.id}"
             recordDateTimeTextView.text = formatDateTime(record.dateTime)
             recordUserTextView.text = userName

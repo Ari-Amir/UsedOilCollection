@@ -40,7 +40,7 @@ class AllTests {
 }
 
 
-class RepeatTests {
+class RepeatTestsEspresso {
 
     @org.junit.Test
     fun runTestsMultipleTimes() {
@@ -54,9 +54,14 @@ class RepeatTests {
             LoginTest::class.java
         )
 
-        for (i in 1..3) {
-            println("Running tests iteration $i")
+        for (i in 1..4) {
+            val startTime = System.currentTimeMillis()
+            // println("Running tests iteration $i started at: $startTime")
             testClasses.forEach { JUnitCore.runClasses(it) }
+            val endTime = System.currentTimeMillis()
+            //println("Running tests iteration $i ended at: $endTime")
+            val duration = endTime - startTime
+            println("Total time taken for iteration $i: ${duration / 1000} seconds (${duration} milliseconds)")
         }
     }
 }

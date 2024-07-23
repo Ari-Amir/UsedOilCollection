@@ -42,6 +42,7 @@ class DeleteLocationsTest {
         }
 
         val recyclerView = device.findObject(UiSelector().resourceId("com.aco.usedoilcollection:id/locations_recycler_view"))
+        sleep(500)
         assert(recyclerView.childCount == 0)
     }
 }

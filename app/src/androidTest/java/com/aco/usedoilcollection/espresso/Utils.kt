@@ -17,7 +17,7 @@ import kotlinx.coroutines.runBlocking
 import org.hamcrest.Matcher
 
 const val TEST_USER_NAME = "Test User"
-const val TEST_USER_EMAIL = "test@example.com"
+const val TEST_USER_EMAIL = "test@gmail.com"
 const val TEST_USER_PASSWORD = "password"
 
 fun clearRecords() {
